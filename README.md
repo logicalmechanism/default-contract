@@ -2,7 +2,7 @@
 
 I start a lot of my projects with this build. I will update it as I go along my path.
 
-This folder will produce a contract that can be used with the most recent version of Cardano.
+This folder will produce a pure on-chain contract that can be used with the most recent version of the cardano-cli.
 
 ```
 cardano-cli 1.31.0 - linux-x86_64 - ghc-8.10
