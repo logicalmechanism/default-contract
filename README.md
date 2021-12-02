@@ -7,11 +7,17 @@ This folder will produce a pure on-chain contract that can be used with the most
 ```
 cardano-cli 1.31.0 - linux-x86_64 - ghc-8.10
 git rev 2cbe363874d0261bc62f52185cf23ed492cf4859
+
+cabal-install version 3.4.0.0
+compiled using version 3.4.0.0 of the Cabal library
+
+The Glorious Glasgow Haskell Compilation System, version 8.10.4
 ```
 
 # Building
 
-This command should be ran from the base folder.
+This build command should be ran from the base folder.
+
 ```bash
 cd default-contract/
 cabal clean
@@ -39,3 +45,20 @@ addr1w8szu2cw6agatdz9a62pglyqx2lktyf26dtn4a49wqcp7nc4ssmsz
 ```
 
 A successful build should obtain the same address.
+
+A simple test:
+
+```bash
+str1=$(cardano-cli \
+address build \
+--mainnet \
+--payment-script-file \
+default_contract.plutus)
+str2="addr1w8szu2cw6agatdz9a62pglyqx2lktyf26dtn4a49wqcp7nc4ssmsz"
+ 
+if [ "$str1" == "$str2" ]; then
+    echo "Equal."
+else
+    echo "Not Equal."
+fi
+```
